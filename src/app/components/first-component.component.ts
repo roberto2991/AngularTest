@@ -1,3 +1,4 @@
+import { Utility } from './../utility/utility';
 import { Component, OnInit } from '@angular/core';
 import { Users } from './../model/users';
 
@@ -22,7 +23,9 @@ export class FirstComponentComponent implements OnInit {
         }
       ];
 
-  constructor() { }
+  constructor(util: Utility) {
+    console.log('utilizziamo una classe provider '+util.add(5,6))
+   }
 
   ngOnInit(): void {
   }
