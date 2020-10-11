@@ -1,6 +1,7 @@
 import { Utility } from './../utility/utility';
 import { Component, OnInit } from '@angular/core';
 import { Users } from './../model/users';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-first-component',
@@ -11,21 +12,18 @@ export class FirstComponentComponent implements OnInit {
 
   date = Date.now();
   decimal = 10.23230432;
+  users: Users[];
 
-  users: Users[] = [
-        {id: 1,
-          name:'mario',
-          testo:'mario ie nu bell waglion e fasc tand cos bell'
-        },
-        {id: 2,
-          name:'valeria',
-          testo:'valeria ie na bell wagned e fasc tand '
-        }
-      ];
+  constructor(util: Utility, private http: HttpClient) {
+    console.log('utilizziamo una classe provider ' + util.add(5, 6));
 
-  constructor(util: Utility) {
-    console.log('utilizziamo una classe provider '+util.add(5,6))
-   }
+    //preleviamo dalla get rest api json da jsonplaceholder
+    this.http.get<Users[]>('https://jsonplaceholder.typicode.com/users').subscribe( data => {
+      console.log(data)
+      this.users = data;
+    });
+
+  }
 
   ngOnInit(): void {
   }

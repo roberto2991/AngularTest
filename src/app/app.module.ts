@@ -4,8 +4,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { FirstComponentComponent } from './components/first-component.component';
-import {PipeTruncate} from './pipe/pipeTruncate';
+import { PipeTruncate } from './pipe/pipeTruncate';
 import { Utility } from './utility/utility';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { Utility } from './utility/utility';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [Utility],
   bootstrap: [AppComponent]

@@ -2,9 +2,8 @@
 <p>{{date | date}}</p>
 <p>{{decimal | number: '3.2-4'}}</p>
 
-<h1>CLASS PIPE</h1>
+<h1>CLASS PIPE E CHIAMATA REST</h1>
 <li *ngFor="let user of users">
-    <h2>{{user.id}}</h2>
-    <i>{{user.name}}</i>
-    <p>{{user.testo | pipeTruncate:12}}</p>
+    {{user.id}} - {{user.name|pipeTruncate:12}} - {{user.username}} - {{user.email}}
 </li>
+<br>
