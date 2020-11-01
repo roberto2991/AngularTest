@@ -2,8 +2,13 @@
 <p>{{date | date}}</p>
 <p>{{decimal | number: '3.2-4'}}</p>
 
-<h1>CLASS PIPE E CHIAMATA REST</h1>
-<li *ngFor="let user of users">
-    {{user.id}} - {{user.name|pipeTruncate:12}} - {{user.username}} - {{user.email}}
-</li>
+<div class="container">
+    <h1>CLASS PIPE E CHIAMATA REST</h1>
+<!-- [ngClass]="{'male': user.id % 2 === 0, 'female': user.id % 2 === 1}" -->
+<div [ngClass]="getCSS(user)" [style.fontSize.px]="user.id*2" *ngFor="let user of users; let i=index" >
+    {{i}}. {{user.id}} - {{user.name|pipeTruncate:12}} - {{user.username}} - {{user.email}}
+    <button style="margin:10px" (click)="delete(user)">DELETE</button>
+</div>
+</div>
+
 <br>

@@ -18,11 +18,21 @@ export class FirstComponentComponent implements OnInit {
     console.log('utilizziamo una classe provider ' + util.add(5, 6));
 
     //preleviamo dalla get rest api json da jsonplaceholder
-    this.http.get<Users[]>('https://jsonplaceholder.typicode.com/users').subscribe( data => {
+    this.http.get<Users[]>('https://jsonplaceholder.typicode.com/users').subscribe(data => {
       console.log(data)
       this.users = data;
     });
 
+  }
+
+  delete(user: Users) {
+    //clona la collezione con tutti gli item che hanno un id diverso a quello scelto
+    this.users = this.users.filter(item => item.id !== user.id)
+  }
+
+  getCSS(user: Users) {
+    //ritorna la classe css da inserire
+    return user.id % 2 === 0 ? 'male' : 'female';
   }
 
   ngOnInit(): void {
