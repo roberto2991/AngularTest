@@ -7,17 +7,21 @@ import { FirstComponentComponent } from './components/first-component.component'
 import { PipeTruncate } from './pipe/pipeTruncate';
 import { Utility } from './utility/utility';
 import { HttpClientModule } from '@angular/common/http';
+import { AddUserComponent } from './components/add/add-user.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
-    PipeTruncate
+    PipeTruncate,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [Utility],
   bootstrap: [AppComponent]

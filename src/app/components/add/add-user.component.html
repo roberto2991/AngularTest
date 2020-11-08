@@ -1,0 +1,34 @@
+<div class="container">
+    <h1>FORM</h1>
+    <!--h2>base</h2>
+    <input type="text" #inputRef (keydown.enter)="AddUser(inputRef)" placeholder="Add user...">
+    <br>
+    <li *ngFor="let user of users" >
+       {{user}}
+    </li-->
+    <h1>NGMODEL</h1>
+    <pre>{{f.dirty}}</pre>
+    <pre>{{f.valid}}</pre>
+    <pre>{{f.touched}}</pre>
+    <pre>{{inputName.errors | json}}</pre>
+    <div *ngIf="inputName.errors?.minlength">troppo corto mancano ancora 
+        {{inputName.errors?.minlength.requiredLength - inputName.errors?.minlength.actualLength}} caratteri</div>
+    <div *ngIf="inputName.errors?.required">Campo obbligatorio</div>
+    <form #f="ngForm" (ngSubmit)="AddUser(f)">
+        <input type="text" name="name" [ngModel]="user?.name" placeholder="Add name..." 
+        required #inputName="ngModel" [ngClass]="{'error': inputName.invalid && inputName.dirty}"
+        minlength="3">
+        <input type="text" name="id" [ngModel]="user?.id" placeholder="Add id...">
+        <input type="text" name="username" [ngModel]="user?.username" placeholder="Add username...">
+        <input type="text" name="email" [ngModel]="user?.email" placeholder="Add email...">
+        <input type="text" name="color" [ngModel]="user?.color" placeholder="Add color...">
+        <span><button class="btn btn-primary" type="submit" [disabled]="f.invalid">{{user?'RENAME':'ADD'}}</button></span>
+        
+        
+    </form>
+    <li *ngFor="let user of users" [ngStyle]="{'background': user.color}">
+        {{user.name}} con id: {{user.id}} soprannome: {{user.username}} email: {{user.email}}
+        <span><button class="btn btn-warning" (click)="Edit(user)" type="submit">EDIT</button></span>
+    </li>
+
+</div>

@@ -2,6 +2,7 @@ import { Utility } from './../utility/utility';
 import { Component, OnInit } from '@angular/core';
 import { Users } from './../model/users';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-first-component',
