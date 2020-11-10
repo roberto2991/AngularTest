@@ -9,13 +9,15 @@ import { Utility } from './utility/utility';
 import { HttpClientModule } from '@angular/common/http';
 import { AddUserComponent } from './components/add/add-user.component';
 import { FormsModule } from '@angular/forms';
+import { DecoratorInputComponent } from './components/decorator-input/decorator-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponentComponent,
     PipeTruncate,
-    AddUserComponent
+    AddUserComponent,
+    DecoratorInputComponent
   ],
   imports: [
     BrowserModule,

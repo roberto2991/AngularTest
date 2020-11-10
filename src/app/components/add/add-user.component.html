@@ -28,7 +28,8 @@
     </form>
     <li *ngFor="let user of users" [ngStyle]="{'background': user.color}">
         {{user.name}} con id: {{user.id}} soprannome: {{user.username}} email: {{user.email}}
-        <span><button class="btn btn-warning" (click)="Edit(user)" type="submit">EDIT</button></span>
+        <span><button class="btn btn-warning" (click)="Edit(user)" type="submit">EDIT</button></span> <br>
+        <app-decorator-input name="{{user.name}}" color="{{user.color}}"></app-decorator-input>
     </li>
 
 </div>
