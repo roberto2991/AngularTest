@@ -1,3 +1,27 @@
+<div class="container">
+    <h1>CONTENT PROJECTION</h1>
+    <app-card title="Test ng content">
+        <input type="text">
+        <input type="text">
+        <input type="text">
+    </app-card>
+    <app-card title="2 Test ng content">
+        <div class="row">
+            <div class="col">
+                <app-card title="Annidamento">
+                    <p>sono annidato</p>
+                </app-card>
+            </div>
+            <div class="col">
+                <app-card title="input annidato">
+                    <input type="text">
+                </app-card>
+            </div>
+        </div>
+    </app-card>
+</div>
+
+<br>
 <app-first-component></app-first-component>
 <br>
 <button (click)="DoVisible()">Toggle</button><br>

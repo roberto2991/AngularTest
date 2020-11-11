@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AddUserComponent } from './components/add/add-user.component';
 import { FormsModule } from '@angular/forms';
 import { DecoratorInputComponent } from './components/decorator-input/decorator-input.component';
+import { CardComponent } from './shared/card/card.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DecoratorInputComponent } from './components/decorator-input/decorator-
     FirstComponentComponent,
     PipeTruncate,
     AddUserComponent,
-    DecoratorInputComponent
+    DecoratorInputComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,
