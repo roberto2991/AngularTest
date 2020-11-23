@@ -1,8 +1,9 @@
 <div class="card mb-3">
     <div class="card-header">
         {{title}}
+        <button (click)="opened=!opened">ESPLODI</button>
     </div>
-    <div class="card-body">
+    <div class="card-body" *ngIf="opened">
         <ng-content></ng-content> 
     </div>
     <div class="card-footer text-muted">

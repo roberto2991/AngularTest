@@ -6,7 +6,8 @@ import { Component, Input } from '@angular/core';
 })
 export class CardComponent {
 
-  @Input() title: string;
+  @Input() title = 'ND';
+  opened: boolean = false;
 
   constructor() { }
 
