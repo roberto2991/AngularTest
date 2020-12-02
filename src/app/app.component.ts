@@ -1,3 +1,4 @@
+import { Nation } from './model/nation';
 import { Component } from '@angular/core';
 
 
@@ -9,31 +10,56 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'MyApp';
   url: string;
+  urlEmitted: string;
   visible = false;
-  users=['mario','valeria','roberto'];
+  nationClicked: Nation;
 
-  ClickString(event: MouseEvent){
-    console.log('hai cliccato',event)
+  nations = [{
+    "id": 1,
+    "name": "Italy"
+  },
+  {
+    "id": 1,
+    "name": "Germany"
+  },
+  {
+    "id": 1,
+    "name": "England"
+  }
+  ];
+
+  users = ['mario', 'valeria', 'roberto'];
+
+  OpenWikiNation(nation: Nation) {
+    console.log('hai digitato su tastiera', nation)
+    //window.open(url:'https://it.wikipedia.org/wiki/' + nation.name);
+    this.urlEmitted = 'https://it.wikipedia.org/wiki/' + nation.name;
+    this.nationClicked = nation;
+    window.open(this.urlEmitted);
   }
 
-  pressHandler(event: KeyboardEvent){
+  ClickString(event: MouseEvent) {
+    console.log('hai cliccato', event)
+  }
+
+  pressHandler(event: KeyboardEvent) {
     const target = event.target as HTMLInputElement
     console.log('hai digitato su tastiera', target.value)
   }
 
-  DoVisible(){
-    if (this.visible){
+  DoVisible() {
+    if (this.visible) {
       this.visible = false;
-    }else{
+    } else {
       this.visible = true;
     }
-    
+
   }
 
-  Loadimg(){
+  Loadimg() {
     this.url = 'https://www.udemy.com/staticx/udemy/images/v6/logo-coral-light.svg';
   }
-  Unloadimg(){
-    this.url =  null;
+  Unloadimg() {
+    this.url = null;
   }
 }

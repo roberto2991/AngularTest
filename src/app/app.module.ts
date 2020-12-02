@@ -11,6 +11,7 @@ import { AddUserComponent } from './components/add/add-user.component';
 import { FormsModule } from '@angular/forms';
 import { DecoratorInputComponent } from './components/decorator-input/decorator-input.component';
 import { CardComponent } from './shared/card/card.component';
+import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { CardComponent } from './shared/card/card.component';
     PipeTruncate,
     AddUserComponent,
     DecoratorInputComponent,
-    CardComponent
+    CardComponent,
+    NavBarComponent
   ],
   imports: [
     BrowserModule,

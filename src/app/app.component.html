@@ -1,4 +1,8 @@
 <div class="container">
+    <app-nav-bar [nations]="nations" (tabClick)="OpenWikiNation($event)"></app-nav-bar>
+</div>
+
+<div class="container">
     <h1>CONTENT PROJECTION</h1>
     <app-card title="Test ng content">
         <input type="text">
@@ -8,7 +12,7 @@
     <app-card title="2 Test ng content">
         <div class="row">
             <div class="col">
-                <app-card title="Annidamento">
+                <app-card [title]="nationClicked?.name">
                     <p>sono annidato</p>
                 </app-card>
             </div>
@@ -27,7 +31,8 @@
 <button (click)="DoVisible()">Toggle</button><br>
 <h1 *ngIf="visible" (click)="ClickString($event)">My app</h1>
 <input type="text" (keydown.enter)="pressHandler($event)"><br>
-<div *ngIf="visible"><!-- non si possono mettere due direttive nello stesso tag-->
+<div *ngIf="visible">
+    <!-- non si possono mettere due direttive nello stesso tag-->
     <li *ngFor="let user of users">
         {{user}}
     </li>
