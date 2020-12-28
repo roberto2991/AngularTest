@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { DecoratorInputComponent } from './components/decorator-input/decorator-input.component';
 import { CardComponent } from './shared/card/card.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
+import { MeteoComponent } from './components/meteo/meteo.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
     AddUserComponent,
     DecoratorInputComponent,
     CardComponent,
-    NavBarComponent
+    NavBarComponent,
+    MeteoComponent
   ],
   imports: [
     BrowserModule,

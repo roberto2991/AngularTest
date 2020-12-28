@@ -1,0 +1,6 @@
+<div *ngIf="whether">
+    {{printMe()}}
+    <h1>{{city}}</h1>
+    <p>{{whether.main.temp |json}}</p>
+    <pre>{{whether |json}}</pre>
+</div>

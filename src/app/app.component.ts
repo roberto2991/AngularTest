@@ -14,6 +14,10 @@ export class AppComponent {
   visible = false;
   nationClicked: Nation;
 
+  //for whether
+  city:string = "bitonto";
+  
+
   nations = [{
     "id": 1,
     "name": "Italy"
@@ -29,6 +33,13 @@ export class AppComponent {
   ];
 
   users = ['mario', 'valeria', 'roberto'];
+
+
+  insertCity(event: KeyboardEvent) {
+    const target = event.target as HTMLInputElement
+    console.log('hai digitato la città: ', target.value)
+    this.city=target.value;
+  }
 
   OpenWikiNation(nation: Nation) {
     console.log('hai digitato su tastiera', nation)

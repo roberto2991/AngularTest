@@ -1,3 +1,10 @@
+<br>
+<div class="container">
+    <p>digita il nome della citta</p>
+    <input placeholder="add a city..." type="text" (keydown.enter)="insertCity($event)"><br>
+    <app-meteo [city]=city></app-meteo>
+</div>
+
 <div class="container">
     <app-nav-bar [nations]="nations" (tabClick)="OpenWikiNation($event)"></app-nav-bar>
 </div>
