@@ -1,0 +1,9 @@
+<div *ngIf="user">
+    <h1>{{user.name}}</h1>
+    <h2>{{user.email}}</h2>
+</div>
+
+
+
+<button (click)="next()">NEXT</button>
+<pre>{{user|json}}</pre>

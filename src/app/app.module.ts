@@ -1,3 +1,4 @@
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,12 @@ import { DecoratorInputComponent } from './components/decorator-input/decorator-
 import { CardComponent } from './shared/card/card.component';
 import { NavBarComponent } from './shared/nav-bar/nav-bar.component';
 import { MeteoComponent } from './components/meteo/meteo.component';
+import { NavComponent } from './shared/nav/nav.component';
+import { HomeComponent } from './components/home/home.component';
+import { GalleryComponent } from './components/gallery/gallery.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { UsersComponent } from './features/users/users.component';
+import { UserDetailsComponent } from './features/user-details/user-details.component';
 
 @NgModule({
   declarations: [
@@ -23,13 +30,20 @@ import { MeteoComponent } from './components/meteo/meteo.component';
     DecoratorInputComponent,
     CardComponent,
     NavBarComponent,
-    MeteoComponent
+    MeteoComponent,
+    NavComponent,
+    HomeComponent,
+    GalleryComponent,
+    ContactComponent,
+    UsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [Utility],
   bootstrap: [AppComponent]
